@@ -9,7 +9,7 @@ In de terminal run commando:
 `cd react-sequencer`
 
 
-###en installeer de volgende packages
+### en installeer de volgende packages
 
 `npm install sass --save-dev`
 
