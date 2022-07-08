@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+.register-form {
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & > label {
+        margin: 12px auto 6px auto;
+        font-size: 24px;
+
+        &.login-error {
+            border: 2px solid red;
+        }
+
+        & > input {
+            margin-left: 12px;
+
+            
+        }
+    }
+
+    & > button {
+        width: 70px;
+        height: 24px;
+        background-color: white;
+        margin: auto 20px auto auto;
+        border: 3px solid #0F238C;
+        color: $blue;
+    }
+}

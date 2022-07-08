@@ -1,0 +1,59 @@
+@import '../../styles/variables';
+
+.modal-dark-background {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    margin:0;
+    z-index: 10;
+    position: absolute;
+    display:flex;
+  }
+  
+  .modal-window {
+    margin: 120px auto;
+    width: 700px;
+    background: white;
+    color: $blue;
+    z-index: 20;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    border: 4px solid $blue;
+    display: flex;
+    flex-direction: column;
+
+    &.small {
+        width: 400px;
+        height: 250px;
+    }
+
+    &.normal {
+        width: 600px;
+        height: 400px;
+    }
+
+    & > .modal-header {
+        height: 40px;
+        position: relative;
+        top:0px;
+        left:0px;
+        display:flex;
+        flex-grow: 0;
+
+        & > .model-window-close {
+            color: $blue;
+            font-size:26px;
+            margin:12px 12px 12px auto;
+
+            &:hover {
+                font-size:28px;
+                margin:11px 11px 11px auto;
+            }
+        }  
+      }
+
+    & > .modal-window-content {
+        height: 100%;
+    }
+  }
+  
+  

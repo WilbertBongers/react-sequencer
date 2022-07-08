@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+
+.channel-strip {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100px;
+    padding: 10px;
+    height: 360px;
+    border: 2px solid $blue;
+    background-color:white;
+    
+}
+
+.single-channel {
+    margin: auto 2vw;
+}
+.master-channel {
+    margin: auto 2vw auto auto;
+}
+
+.channel-name {
+    height: 30px;
+    display:flex;
+
+    & > span {
+        margin:auto;
+        font-size:28px;
+        color:$blue;
+    }
+}
+.slider {
+    -webkit-appearance: slider-vertical;
+    height: 80%;
+}

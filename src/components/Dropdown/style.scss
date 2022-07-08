@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+
+.sub-menu {
+    padding: 0 10px;
+    &.visible {
+        position:relative;
+        display: block;
+        padding: 20px 0 10px 10px;
+        border-bottom: 6px solid $blue;
+        background-color: white;
+        z-index: 100;
+
+        & > li > a {
+            text-decoration: none;
+        }
+    }
+
+    &.inVisible {
+        display:none;
+    }
+
+    & > li {
+        margin: 10px 0;
+    }
+}

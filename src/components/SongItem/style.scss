@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+
+.song-item-container {
+
+    list-style-type: none;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    margin: 8px 20px;
+    cursor: pointer;
+
+    &.selected { 
+        border: 2px solid $blue;
+    }
+
+    & > h3 {
+        margin: auto 12px;
+        font-size: 24px;
+    }
+    
+    & > span {
+        margin: auto 12px;
+        font-size: 18px;
+        font-style: italic;
+    }
+}

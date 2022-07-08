@@ -1,0 +1,73 @@
+@import '../../styles/variables';
+
+.widget-songlist-content {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $light-gray;
+
+    
+    .songlist-waiting-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        & > svg {
+            margin: auto;
+            font-size: 48px;
+        }
+        & > p {
+            position: relative;
+            bottom: 20px;
+            margin: 0 auto;
+            font-size: 18px;
+            font-style: italic;
+        }
+    }
+    .songlist-container {
+        height: 100%;
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        
+    }
+
+    .songlist-nav-container {
+
+        height: 50px;
+        display: flex;
+        position: relative;
+        bottom: 0;
+
+        & > .songlist-button {
+
+            width: 70px;
+            height: 24px;
+            background-color:white;;
+            margin: auto 20px auto auto;
+            border: 3px solid #0F238C;
+            display: flex;
+            cursor: pointer;
+
+            &.disabled {
+                cursor:default;
+                border: 2px solid $gray;
+
+                & > span {
+                    color: $gray;
+                }
+            }
+            & > span{
+                margin: auto;
+                color: #0F238C;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+}

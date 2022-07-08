@@ -1,0 +1,50 @@
+{
+    "name": "",
+    "user_id": 0,
+    "tracks": [
+        {
+            "track": "track_0",
+            "mute":false,
+            "solo":false,
+            "selected":false,
+            "volume": 0.8,
+            "pan": 0,
+            "name": "Piano",
+            "grid": "Piano",
+            "notes": []
+        },
+        {
+            "track": "track_1",
+            "mute":false,
+            "solo":false,
+            "selected":false,
+            "name": "Synth",
+            "grid": "Piano",
+            "volume": 0.8,
+            "pan": 0,
+            "notes": []
+        },
+        {
+            "track": "track_2",
+            "mute":false,
+            "solo":false,
+            "selected":false,
+            "volume": 0.8,
+            "pan": 0,
+            "name": "Bass",
+            "grid": "Bass",
+            "notes": []
+        },
+        {
+            "track": "track_3",
+            "mute":false,
+            "solo":false,
+            "selected":false,
+            "volume": 0.8,
+            "pan": 0,
+            "name": "Drum",
+            "grid": "Drum",
+            "notes": []
+        }
+    ]
+}

@@ -1,0 +1,100 @@
+@import '../../styles/variables';
+
+nav {
+
+    width:$container-width;
+    margin:0 auto;
+
+    & > .top-menu {
+        padding: 0;
+        margin:0;
+        height: 50px;
+        display:flex;
+
+       
+        & > .menu-item-container {
+            width: 200px;
+            height: 40px;
+            color: $blue;
+            margin: auto 10px;
+            width: 160px;
+            font-size: 24px;
+            
+            
+            & > .menu-item-button {
+                padding: 0 10px;
+                line-height: 40px;
+                cursor: pointer;
+                display:flex;
+
+                & > span {
+                    margin: auto auto auto 4px;
+                }
+                & > svg {
+                    font-size: 20px;
+                    margin: auto 4px auto auto;
+                }
+            }
+
+            & > .sub-menu {
+                padding: 0 10px;
+                &.visible {
+                    position:relative;
+                    display: block;
+                    padding: 20px 0 10px 10px;
+                    border-bottom: 6px solid $blue;
+                    background-color: white;
+                    z-index: 100;
+            
+                    & > li > a {
+                        text-decoration: none;
+                    }
+                }
+            
+                &.inVisible {
+                    display:none;
+                }
+            
+                & > li {
+                    margin: 10px 0;
+                }
+            }
+        }
+        & > .right-menu-pos {
+            margin-left: auto;
+        }
+        
+    }
+    ul {
+        list-style-type: none;
+    }
+    & > .menu-devider-top::after {
+        display: block;
+        width: 100%;
+        content:' ';
+        height: 6px;
+        background-color: $blue;
+        border-radius: 3px;
+    }
+    & > .menu-devider-bottom::after {
+        display: block;
+        width: 100%;
+        content:' ';
+        height: 6px;
+        background-color: $blue;
+        border-radius: 3px;
+    }
+    & > .title-bar {
+        margin: 2px 0;
+        height: 36px;
+        border-radius: 11px;
+        display: flex;
+        background-color:$blue;
+
+        & > .title-bar-title {
+            color: $white;
+            font-size: 24px;
+            margin: auto;
+        }
+    }
+}
