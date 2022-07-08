@@ -39,7 +39,7 @@ In de terminal run commando:
 `npm install --save @fortawesome/react-fontawesome`
 
 ### environment.js
-In de file environment.js zijn de Apikey en het collectionID gedefinieerd waar deze applicatie gebruik van maakt. Voeg hier je eigen ApiKey van jsonbin.io en je collectieID wat je hebt aangemaakt toe om van start te gaan.
+In de file environment.js zijn de Apikey en het collectionID gedefinieerd waar deze applicatie gebruik van maakt. Voeg hier je eigen ApiKey van jsonbin.io en je collectieID wat je hebt aangemaakt toe om van start te gaan. Voor de eindopdracht Frontend 2022 staat deze file met keys in de map met de broncode.
 
 ## Available Scripts
 
