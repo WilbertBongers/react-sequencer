@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style.scss";
 import useSong from "../../hooks/useSong";
 import SingleNote from "../SingleNote/SingleNote";
-import { inverseCanvasYAxis, translateBarBeatsSixteens2Ticks } from "../../helpers/Util";
+import { translateBarBeatsSixteens2Ticks } from "../../helpers/Util";
 import DrawGrid from "../DrawGrid/DrawGrid";
 import Enumerable from "linq";
 import { Stage, Layer } from "react-konva";
@@ -81,11 +81,47 @@ function GridEdit() {
     }
 
     const noteChangedHandler = (dimension, id) => {
-        console.log(dimension)
+        console.log(dimension);
+        const changedNote = Enumerable.from(selectedTrack.notes)
+            .where(n => n.id === id)
+            .firstOrDefault(null)
+    console.log(size)
+        changedNote.duration = Math.floor(dimension.Width / dimension.Scale.horizontal);
+        changedNote.step = Math.floor((size.width - size.margin) / dimension.X);
+        changedNote.note = 48;
+
+        console.log(selectedTrack.notes);
+        const unselected = Enumerable.from(song.tracks)
+            .where(t => t.track !== selectedTrack.id)
+            .toArray()
+
+        adjustTrack({
+            "tracks": Enumerable.from([selectedTrack])
+                .union(unselected)
+                .orderBy(t => t.track)
+                .toArray()
+        });
+    }
+
+    const noteRemoveHandler = (note) => {
+        console.log(note);
+        for(let i=0;i<selectedTrack.notes.length; i++){
+            selectedTrack.notes.splice(i,1);
+        }
+
+        const unselected = Enumerable.from(song.tracks)
+            .where(t => t.track !== selectedTrack.id)
+            .toArray()
+
+        adjustTrack({
+            "tracks": Enumerable.from([selectedTrack])
+                .union(unselected)
+                .orderBy(t => t.track)
+                .toArray()
+        });
     }
 
     const clickHandler = (e) => {
-        console.log(e);
         const step = Math.floor((e.evt.offsetX - size.margin) / scale.horizontal );
         const pitch = e.target.attrs.id.replace('_', '');
 
@@ -95,7 +131,7 @@ function GridEdit() {
             "name": notes[pitch],
             "note": pitch,
             "step": step,
-            "velocity": 0.7480314960629921
+            "velocity": 0.75
         };
         selectedTrack.notes.push(newNote);
 
@@ -123,6 +159,7 @@ function GridEdit() {
                         size={size}
                         key={note.id}
                         onNoteChanged={(dimension) => noteChangedHandler(dimension, note.id)}
+                        onNoteDoubleClicked={(note) => noteRemoveHandler(note)}
                     />
                 ))}
             </Layer>

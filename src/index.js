@@ -1,4 +1,4 @@
-import React, { StrictMode } from 'react';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -10,7 +10,7 @@ import './styles/_globals.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <StrictMode>
+
         <AuthProvider>
             <Router>
                 <SongProvider>
@@ -20,7 +20,7 @@ root.render(
                 </SongProvider>
             </Router>
         </AuthProvider>
-    </StrictMode>
+
 );
 
 // If you want to start measuring performance in your app, pass a function

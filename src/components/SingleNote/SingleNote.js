@@ -5,19 +5,18 @@ import {
     Rect,
 } from "react-konva";
 
-const SingleNote = ({ note, scale, size, key, onNoteChanged }) => {
+const SingleNote = ({ note, scale, size, key, onNoteChanged, onNoteDoubleClicked }) => {
 
     const offset = size.center - 0.5 * scale.notes * scale.vertical;
-   
     const [dimension, setDimension] = useState({
-        X: note.step * scale.horizontal + size.margin,
-        Y: offset + scale.vertical * ( scale.low - note.note - 1 + scale.notes ) / 2,
+        X: ( note.step * scale.horizontal + size.margin ) / 2,
+        Y: offset + scale.vertical * ( scale.low - note.note - 4 + scale.notes ) / 2,
         Width: note.duration * scale.horizontal,
         Scale: scale,
-        HandleX: (note.step * scale.horizontal + size.margin + note.duration * scale.horizontal - 8),
-        HandleY: offset + scale.vertical * ( scale.low - note.note + scale.notes ),
+        HandleX: ((note.step * scale.horizontal + size.margin) / 2 ) + (note.duration * scale.horizontal - 8),
+        HandleY: offset + scale.vertical * ( scale.low - note.note - 4 + scale.notes ) / 2,
     })
-
+    console.log(dimension);
     const [dragBusy, setDragBusy] = useState(false);
     const [startValue, setStartValue] = useState({
         X: null,
@@ -107,6 +106,7 @@ const SingleNote = ({ note, scale, size, key, onNoteChanged }) => {
             draggable
             onDragStart={handleDragStart}
             onDragEnd={handleDragEndNote}
+            onDblClick={() => onNoteDoubleClicked(note)}
         >
             <Rect
                 fill={"orange"}

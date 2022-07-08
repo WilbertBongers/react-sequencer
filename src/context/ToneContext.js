@@ -52,26 +52,16 @@ const ToneProvider = ({ children }) => {
     )
 
     const createSynthArray = () => {
-        const piano = new Tone.Sampler({
-            urls: {
-                A2: "A2.mp3",
-                A3: "A3.mp3",
-                A4: "A4.mp3",
-                A5: "A5.mp3",
-            },
-            baseUrl: "https://tonejs.github.io/audio/salamanderander/"
+        const piano = new Tone.PolySynth({
+            oscillator: { type: "triangle" }
         }).toDestination();
 
-        const synth = new Tone.Synth({
+        const synth = new Tone.PolySynth({
             oscillator: { type: "square8" }
         }).toDestination();
 
-        const bass = new Tone.Sampler({
-            urls: {
-                A1: "A1.mp3",
-                A2: "A2.mp3",
-            },
-            baseUrl: "https://tonejs.github.io/audio/casio/"
+        const bass = new Tone.PolySynth({
+            oscillator: { type: "sawtooth" }
         }).toDestination();
 
         const drums = new Tone.Sampler({

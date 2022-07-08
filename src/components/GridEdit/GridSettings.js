@@ -14,7 +14,7 @@ export const GridSettings = [
     {
         name: "Drum",
         setting: {
-            horizontal: 30,
+            horizontal: 18,
             vertical: 24,
             notes: 12,
             duration: 64,
@@ -26,7 +26,7 @@ export const GridSettings = [
     {
         name: "Bass",
         setting: {
-            horizontal: 20,
+            horizontal: 18,
             vertical: 8,
             notes: 28,
             duration: 64,
